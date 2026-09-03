@@ -67,15 +67,24 @@
       mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
     }
 
-    /* HERO — single column */
+    /* HERO — two column */
     .hero {
       background: var(--surface); border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+      overflow: hidden;
     }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
 
     .hero-text {
-      max-width: 760px;
       padding: 72px 56px;
       display: flex; flex-direction: column; gap: 0;
+    }
+
+    .hero-img { overflow: hidden; height: 100%; min-height: 340px; }
+    .hero-img img {
+      width: 100%; height: 100%; object-fit: cover; object-position: left top; display: block;
+      -webkit-mask-image: linear-gradient(to left, transparent 0%, black 18%, black 100%);
+      mask-image: linear-gradient(to left, transparent 0%, black 18%, black 100%);
     }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
@@ -203,6 +212,9 @@
       <a href="mailto:info@contexto-ai.com" class="btn-primary">Request Access</a>
       <a href="#how" class="btn-ghost">See How It Works</a>
     </div>
+  </div>
+  <div class="hero-img">
+    <img src="./hero-ui.png" alt="Contexto agent UI">
   </div>
 </section>
 
