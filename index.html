@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contexto, Private AI That Knows Your Business</title>
+  <meta name="description" content="Contexto is a managed AI agent that connects to your work, knows your clients, and works like a personal assistant who already knows everything.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #002D72;
+      --navy2:  #003d99;
+      --light:  #e8eef8;
+      --bg:     #f4f5f7;
+      --text:   #1a1d23;
+      --muted:  #6b7280;
+      --white:  #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 60px;
+      background: var(--white);
+      border-bottom: 1px solid #e0e4ea;
+    }
+    .logo {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 20px; font-weight: 700;
+      color: var(--navy); letter-spacing: 3px;
+    }
+    .nav-cta {
+      padding: 8px 22px; border-radius: 8px;
+      background: var(--navy); color: var(--white);
+      font-size: 14px; font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--navy2); }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 100px 24px 80px;
+      background: linear-gradient(160deg, #f0f4fb 0%, var(--white) 60%);
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 5px 16px; border-radius: 20px;
+      background: var(--light); color: var(--navy);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800; line-height: 1.15;
+      color: var(--navy);
+      max-width: 800px; margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--navy2); }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted); max-width: 620px;
+      margin-bottom: 40px; line-height: 1.65;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      padding: 14px 32px; border-radius: 10px;
+      background: var(--navy); color: var(--white);
+      font-size: 15px; font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-primary:hover { background: var(--navy2); transform: translateY(-1px); }
+    .btn-secondary {
+      padding: 14px 32px; border-radius: 10px;
+      border: 1.5px solid #d1d5db; color: var(--text);
+      font-size: 15px; font-weight: 500;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── VALUE ── */
+    .section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--navy); margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 800; color: var(--navy);
+      max-width: 640px; line-height: 1.2; margin-bottom: 16px;
+    }
+    .section p { font-size: 17px; color: var(--muted); max-width: 580px; line-height: 1.7; }
+
+    /* ── PAIN / SOLUTION ── */
+    .two-col {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+      padding: 80px 24px; max-width: 1100px; margin: 0 auto;
+    }
+    @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+    .card {
+      padding: 36px; border-radius: 16px;
+      border: 1.5px solid #e0e4ea; background: var(--white);
+    }
+    .card.highlight {
+      background: var(--navy); border-color: var(--navy); color: var(--white);
+    }
+    .card-icon { font-size: 28px; margin-bottom: 16px; }
+    .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .card p { font-size: 15px; line-height: 1.65; color: var(--muted); }
+    .card.highlight p { color: rgba(255,255,255,0.75); }
+    .card.highlight h3 { color: var(--white); }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .feature {
+      padding: 28px; border-radius: 14px;
+      border: 1.5px solid #e0e4ea;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .feature:hover {
+      border-color: var(--navy);
+      box-shadow: 0 4px 20px rgba(0,45,114,0.08);
+    }
+    .feature-icon { font-size: 26px; margin-bottom: 12px; }
+    .feature h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .feature p { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+
+    /* ── HE SECTION ── */
+    .he-section {
+      background: var(--bg); padding: 80px 24px;
+      text-align: right; direction: rtl;
+    }
+    .he-inner { max-width: 700px; margin: 0 auto; }
+    .he-section .section-label { color: var(--navy); }
+    .he-section h2 { font-size: clamp(24px, 3.5vw, 38px); font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+    .he-section p { font-size: 17px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--navy); padding: 80px 24px;
+      text-align: center; color: var(--white);
+    }
+    .cta-band h2 { font-size: clamp(24px, 3.5vw, 40px); font-weight: 800; margin-bottom: 12px; }
+    .cta-band p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 36px; }
+    .cta-band .btn-primary { background: var(--white); color: var(--navy); }
+    .cta-band .btn-primary:hover { background: var(--light); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 40px;
+      border-top: 1px solid #e0e4ea;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    footer .logo { font-size: 16px; }
+    footer p { font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <span class="logo">{ C } Contexto</span>
+  <a href="mailto:hello@contexto-ai.com" class="nav-cta">Get Started</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">Private AI for Your Business</div>
+  <h1>AI that <span>knows your work</span>,<br>not just your question.</h1>
+  <p class="hero-sub">
+    Every time you talk to AI today, you start from scratch.
+    Contexto connects to your work and acts like a personal assistant who already knows everything.
+  </p>
+  <div class="hero-actions">
+    <a href="mailto:hello@contexto-ai.com" class="btn-primary">Request Access</a>
+    <a href="#how" class="btn-secondary">See How It Works</a>
+  </div>
+</section>
+
+<!-- Pain vs Solution -->
+<div class="two-col" id="how">
+  <div class="card">
+    <div class="card-icon">😞</div>
+    <h3>AI without context is weak</h3>
+    <p>Every session starts blank. It doesn't know who you are, who your clients are, or what you did last week. You spend more time explaining than working.</p>
+  </div>
+  <div class="card highlight">
+    <div class="card-icon">⚡</div>
+    <h3>Contexto already knows</h3>
+    <p>Connected to your documents, emails, and history. It knows your clients, their status, and how you work, from day one.</p>
+  </div>
+</div>
+
+<!-- Features -->
+<div class="section">
+  <div class="section-label">What it does</div>
+  <h2>Your entire business, inside the AI.</h2>
+  <div class="features-grid">
+    <div class="feature">
+      <div class="feature-icon">📄</div>
+      <h4>Reads your documents</h4>
+      <p>Word, Excel, PDF, PowerPoint. Ask anything about any file without copy-pasting.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">✉️</div>
+      <h4>Knows your emails</h4>
+      <p>Reads your inbox, drafts replies in your voice, and copies them ready to send.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🧠</div>
+      <h4>Remembers your clients</h4>
+      <p>Builds a contact book from signatures and mentions. Ask "who is Avi?" and get a full card.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌐</div>
+      <h4>Works in Hebrew</h4>
+      <p>Built for the Israeli market. Reads, reasons, and writes in Hebrew natively.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <h4>Your data stays private</h4>
+      <p>Everything runs inside your own environment. Nothing leaves your network.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🛠️</div>
+      <h4>We run it for you</h4>
+      <p>No IT team required. We deploy, maintain, and support it. You just use it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Hebrew section -->
+<section class="he-section">
+  <div class="he-inner">
+    <div class="section-label">בעברית</div>
+    <h2>בינה מלאכותית שמכירה את העסק שלך</h2>
+    <p>כשאתה מתקשר היום עם AI, אתה מתחיל כל שיחה מחדש. הוא לא יודע מי אתה ולא מכיר את העבודה שלך, ולכן הוא חלש.</p>
+    <p>Contexto מחובר לעבודה שלך. הוא יודע מה עשית, מי הלקוחות ומה הסטאטוס שלהם. כמו עוזר אישי שכבר יודע הכל.</p>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band">
+  <h2>Ready to get started?</h2>
+  <p>We work with a small number of clients. Reach out and we'll be in touch.</p>
+  <a href="mailto:hello@contexto-ai.com" class="btn-primary">hello@contexto-ai.com</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <span class="logo">{ C } Contexto</span>
+  <p>A KaratSec product. Private AI for businesses that can't afford to start from scratch every time.</p>
+  <p>contexto-ai.com</p>
+</footer>
+
+</body>
+</html>
