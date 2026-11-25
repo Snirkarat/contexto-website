@@ -1,324 +1,442 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contexto | Private AI for Your Business</title>
-  <meta name="description" content="Private AI that connects to your work. Knows your clients, your documents, your history. Built for SMBs, deployed in your environment.">
-  <link rel="canonical" href="https://contexto-ai.com/">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/png" href="/logo.png">
-  <link rel="apple-touch-icon" href="/logo.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://contexto-ai.com/">
-  <meta property="og:title" content="Contexto | Private AI for Your Business">
-  <meta property="og:description" content="Private AI that connects to your work. Knows your clients, your documents, your history. Built for SMBs, deployed in your environment.">
-  <meta property="og:image" content="https://contexto-ai.com/logo.png">
-  <meta property="og:image:width" content="1516">
-  <meta property="og:image:height" content="790">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contexto | Private AI for Your Business">
-  <meta name="twitter:description" content="Private AI that connects to your work. Knows your clients, your documents, your history.">
-  <meta name="twitter:image" content="https://contexto-ai.com/logo.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Contexto",
-    "url": "https://contexto-ai.com",
-    "logo": "https://contexto-ai.com/logo.png",
-    "description": "Private AI platform for small and medium businesses. Document Q&A, email drafting, and meeting summarization, deployed in your own environment.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "info@contexto-ai.com",
-      "contactType": "sales"
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contexto | Private AI for Your Business</title>
+<meta name="description" content="Contexto is a managed private AI agent with shared memory across your team and projects. It works from your own documents, email and client history, set up and run for you.">
+<link rel="canonical" href="https://contexto-ai.com/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#eef1f6">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contexto-ai.com/">
+<meta property="og:title" content="Contexto | Private AI for Your Business">
+<meta property="og:description" content="A managed private AI agent with shared memory across your team and projects.">
+<meta property="og:image" content="https://contexto-ai.com/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Contexto",
+  "url": "https://contexto-ai.com",
+  "logo": "https://contexto-ai.com/logo.png",
+  "description": "Managed private AI agent for small and medium professional firms. Document Q&A, drafting, meeting notes and shared team and project memory, private to each firm.",
+  "contactPoint": { "@type": "ContactPoint", "email": "info@contexto-ai.com", "contactType": "sales" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef1f6;
+    --surface: #ffffff;
+    --ink: #0a1226;
+    --ink-2: #384358;
+    --muted: #66728a;
+    --line: rgba(10, 18, 38, 0.11);
+    --navy: #002d72;
+    --navy-deep: #07142e;
+    --blue: #5b8cf5;
+    --blue-soft: #94b4e8;
+    --gutter: clamp(20px, 5vw, 64px);
   }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;700&display=swap">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 80% 55% at 50% -5%, rgba(91, 140, 245, 0.16), transparent 100%),
+      linear-gradient(rgba(10,18,38,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10,18,38,.045) 1px, transparent 1px);
+    background-size: 100% 100%, 56px 56px, 56px 56px;
+    background-attachment: fixed;
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 300; pointer-events: none; opacity: .10; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
 
-    :root {
-      --navy:      #002D72;
-      --navy-mid:  #0044b3;
-      --bg:        #d8e2ef;
-      --surface:   #e8eef7;
-      --ink:       #0f172a;
-      --muted:     #64748b;
-      --border:    #dde3ee;
-      --accent-bg: #dbeafe;
-      --accent-txt:#002D72;
-    }
+  header { position: sticky; top: 0; z-index: 100; background: rgba(238, 241, 246, 0.86); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 18px; letter-spacing: .06em; color: var(--navy); text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--ink-2); font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a.btn-dark, .nav-links a.btn-dark:hover { color: #fff; }
 
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --navy:      #5b8cf5; --navy-mid: #7baaf7;
-        --bg:        #080f1e; --surface: #0f1c35;
-        --ink:       #e8f0fe; --muted: #7d9bc4;
-        --border:    #1e3254; --accent-bg: #111f40; --accent-txt:#94b4e8;
-      }
-    }
-    :root[data-theme="dark"] {
-      --navy:      #5b8cf5; --navy-mid: #7baaf7;
-      --bg:        #080f1e; --surface: #0f1c35;
-      --ink:       #e8f0fe; --muted: #7d9bc4;
-      --border:    #1e3254; --accent-bg: #111f40; --accent-txt:#94b4e8;
-    }
+  .btn { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; padding: 13px 24px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; border: 1px solid transparent; font-family: inherit; transition: transform .2s, background .2s, border-color .2s, color .2s; }
+  .btn-dark { background: var(--navy); color: #fff; }
+  .btn-dark:hover { transform: translateY(-1px); background: #0a3f95; }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: rgba(10,18,38,.22); }
+  .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+  .btn-sm { padding: 9px 18px; }
+  .btn-light { background: #fff; color: var(--navy-deep); }
+  .btn-light:hover { transform: translateY(-1px); }
 
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
-      background: var(--bg); color: var(--ink);
-      line-height: 1.6; -webkit-font-smoothing: antialiased;
-    }
+  /* Hero (dark band, image now, video later) */
+  .hero { position: relative; overflow: hidden; background: var(--navy-deep); color: #fff; padding: clamp(80px, 11vw, 140px) 0 clamp(70px, 9vw, 120px); }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-bg img, .hero-bg video { position: absolute; top: 0; right: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+  .hero-bg::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(5,12,28,.85) 0%, rgba(5,12,28,.55) 38%, rgba(5,12,28,.1) 100%), linear-gradient(to bottom, transparent 70%, var(--navy-deep)); }
+  .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-soft); }
+  .eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px rgba(91,140,245,.22); }
+  h1 { font-size: clamp(38px, 6vw, 78px); line-height: 1.03; letter-spacing: -0.045em; font-weight: 600; margin: 26px 0 26px; }
+  h1 em { font-style: normal; color: #8394b4; }
+  .lead { font-size: clamp(17px, 1.5vw, 20px); color: #c4cde0; max-width: 520px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
+  .hero .btn-dark { background: #fff; color: var(--navy-deep); }
+  .hero .btn-dark:hover { background: var(--blue-soft); }
+  .hero .btn-ghost { color: #fff; border-color: rgba(255,255,255,.3); }
+  .hero .btn-ghost:hover { border-color: var(--blue-soft); color: var(--blue-soft); }
 
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px; height: 58px;
-      background: var(--surface); border-bottom: 1px solid var(--border);
-    }
-    .logo { font-family: "IBM Plex Mono", monospace; font-size: 17px; font-weight: 700; color: var(--navy); letter-spacing: 2px; }
-    .nav-cta { padding: 7px 20px; border-radius: 7px; background: var(--navy); color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; transition: background .15s; }
-    .nav-cta:hover { background: var(--navy-mid); }
+  /* App mock */
+  .app { display: grid; grid-template-columns: 38% 1fr; }
+  .app .side { background: linear-gradient(180deg, #00306f, #00205a); color: #cfe0ff; padding: 18px 14px; display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; }
+  .ball { width: 38px; height: 38px; border-radius: 50%; margin: 0 auto 4px; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 18px; background: radial-gradient(circle at 32% 28%, #7db0ff, #1450c8 55%, #0a2c78); box-shadow: 0 4px 14px rgba(20,80,200,.5); }
+  .side-name { text-align: center; color: #fff; font-weight: 700; font-size: 13px; }
+  .side-sub { text-align: center; color: #8fb2ee; margin-bottom: 8px; }
+  .stat { display: flex; align-items: center; gap: 6px; color: #8fb2ee; margin-bottom: 8px; }
+  .stat i { width: 7px; height: 7px; border-radius: 50%; background: #2ecb7c; }
+  .side-h { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #8fb2ee; }
+  .pills { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .pills span { padding: 3px 8px; border-radius: 999px; background: rgba(255,255,255,.1); font-size: 10px; }
+  .nav-i { padding: 8px 10px; border-radius: 9px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.08); color: #e3edff; }
+  .nav-i.hot { background: rgba(91,140,245,.28); border-color: rgba(125,176,255,.5); color: #fff; }
+  .app .main { display: flex; flex-direction: column; min-width: 0; }
+  .app .chat-body { flex: 1; justify-content: center; }
+  .app .chat-input { margin-top: 12px; }
 
-    /* BANNER */
-    .banner {
-      width: 100%; height: 320px; overflow: hidden;
-      border-bottom: 1px solid var(--border);
-    }
-    .banner img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
-    }
+  /* Chat mock */
+  .chat { background: rgba(255,255,255,.97); color: var(--ink); border-radius: 20px; box-shadow: 0 40px 100px rgba(0,0,0,.45); overflow: hidden; border: 1px solid rgba(255,255,255,.2); }
+  .chat-top { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--line); font-size: 12.5px; }
+  .chat-top b { font-family: 'IBM Plex Mono', monospace; color: var(--navy); letter-spacing: .06em; }
+  .live { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-2); font-weight: 500; }
+  .live i { width: 7px; height: 7px; border-radius: 50%; background: #1fae6b; }
+  .chat-body { padding: 22px 20px 8px; display: flex; flex-direction: column; gap: 14px; background: #f6f8fb; }
+  .bubble { max-width: 88%; padding: 12px 15px; border-radius: 14px; font-size: 13.5px; line-height: 1.5; }
+  .bubble.u { align-self: flex-end; background: var(--navy); color: #fff; border-bottom-right-radius: 4px; }
+  .bubble.a { background: #fff; border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+  .bubble.a ul { margin: 8px 0 0 18px; }
+  .bubble.a li { margin-bottom: 3px; }
+  .bubble .src { margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+  .file { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; padding: 5px 10px; border-radius: 8px; background: rgba(255,255,255,.14); margin-bottom: 8px; }
+  .chat-input { margin: 8px 20px 20px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted); font-size: 13px; }
 
-    /* HERO — two column */
-    .hero {
-      background: var(--surface); border-bottom: 1px solid var(--border);
-      display: grid; grid-template-columns: 1fr 1fr; align-items: center;
-      overflow: hidden;
-    }
-    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+  section { padding: clamp(64px, 9vw, 120px) 0; }
+  .sec-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  h2 { font-size: clamp(30px, 4.4vw, 56px); line-height: 1.06; letter-spacing: -0.04em; font-weight: 600; max-width: 20ch; }
+  h2 em { font-style: normal; color: var(--muted); }
+  .sec-intro { margin-top: 24px; font-size: 18px; color: var(--ink-2); max-width: 640px; }
 
-    .hero-text {
-      padding: 72px 56px;
-      display: flex; flex-direction: column; gap: 0;
-    }
+  .compare-wrap { background: rgba(255,255,255,.65); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .compare { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .col { border: 1px solid var(--line); border-radius: 20px; padding: 36px; background: #fff; }
+  .col.us { background: var(--navy-deep); color: #fff; border-color: var(--navy-deep); }
+  .col .tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .col.us .tag { color: var(--blue); }
+  .col h3 { font-size: 26px; letter-spacing: -0.03em; font-weight: 600; margin: 14px 0 12px; }
+  .col p { color: var(--ink-2); }
+  .col.us p { color: #b4bfd6; }
 
-    .hero-img { display: flex; align-items: center; justify-content: center; padding: 40px 48px 40px 16px; }
-    .hero-img img {
-      width: 100%; max-width: 520px; display: block; border-radius: 12px;
-      box-shadow: 0 4px 32px rgba(0,45,114,0.18), 0 1px 6px rgba(0,0,0,0.08);
-      border: 1px solid var(--border);
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 5px 14px; border-radius: 5px;
-      background: var(--accent-bg); color: var(--accent-txt);
-      font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-      margin-bottom: 28px; width: fit-content;
-    }
-    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--navy); }
+  .cap-list { margin-top: 64px; border-top: 1px solid var(--ink); }
+  .cap { display: grid; grid-template-columns: 90px 1.1fr 1.4fr; gap: 32px; padding: 40px 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .cap .n { font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--navy); padding-top: 8px; }
+  .cap h3 { font-size: clamp(24px, 2.8vw, 36px); letter-spacing: -0.035em; font-weight: 600; line-height: 1.1; }
+  .cap p { color: var(--ink-2); font-size: 17px; }
+  .cap ul { list-style: none; margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .cap li { font-size: 13px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink-2); }
 
-    h1 {
-      font-family: "Raleway", sans-serif;
-      font-size: clamp(34px, 4.2vw, 58px); font-weight: 800; line-height: 1.06;
-      color: var(--navy); text-wrap: balance; margin-bottom: 20px; letter-spacing: -.01em;
-    }
-    h1 em { font-style: normal; color: var(--muted); }
+  .mgrid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .mcard { border: 1px solid var(--line); border-radius: 20px; padding: 32px; background: #fff; }
+  .mcard span { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--navy); }
+  .mcard h3 { font-size: 22px; letter-spacing: -0.03em; font-weight: 600; margin: 12px 0 8px; }
+  .mcard p { color: var(--ink-2); font-size: 15px; }
+  .mnote { margin-top: 20px; padding: 20px 26px; border-radius: 16px; background: var(--navy-deep); color: #c4cde0; font-size: 15px; }
+  .mnote b { color: var(--blue); font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin-right: 12px; }
+  .dark { background: var(--navy-deep); color: #fff; }
+  .dark .sec-label { color: var(--blue); }
+  .dark h2 em { color: #7d8ba8; }
+  .dark .sec-intro { color: #b4bfd6; }
+  .pgrid { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .pcard { border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 30px; background: rgba(255,255,255,.03); }
+  .pcard .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 16px rgba(91,140,245,.6); margin-bottom: 22px; }
+  .pcard h3 { font-size: 20px; letter-spacing: -0.025em; font-weight: 600; margin-bottom: 10px; }
+  .pcard p { color: #b4bfd6; font-size: 15px; }
+  .note { margin-top: 20px; padding: 20px 26px; border-radius: 16px; border: 1px solid rgba(91,140,245,.35); background: rgba(91,140,245,.07); color: #d3dcee; font-size: 15px; }
+  .note b { color: var(--blue-soft); font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin-right: 12px; }
 
-    .hero-sub { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 440px; margin-bottom: 40px; }
+  .who-list { margin-top: 56px; border-top: 1px solid var(--ink); }
+  .who { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .who strong { font-size: clamp(22px, 2.6vw, 32px); font-weight: 600; letter-spacing: -0.03em; }
+  .who span { color: var(--muted); font-size: 16px; text-align: right; max-width: 460px; }
 
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary { padding: 13px 28px; border-radius: 8px; background: var(--navy); color: #fff; font-size: 14.5px; font-weight: 600; text-decoration: none; font-family: inherit; transition: background .15s, transform .1s; }
-    .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); }
-    .btn-ghost { padding: 13px 28px; border-radius: 8px; border: 1.5px solid var(--border); color: var(--muted); font-size: 14.5px; font-weight: 500; text-decoration: none; font-family: inherit; transition: border-color .15s, color .15s; }
-    .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+  .steps-wrap { background: rgba(255,255,255,.65); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .steps { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step { border: 1px solid var(--line); border-radius: 20px; padding: 32px; background: #fff; }
+  .step span { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--navy); }
+  .step h3 { font-size: 22px; letter-spacing: -0.03em; font-weight: 600; margin: 12px 0 8px; }
+  .step p { color: var(--ink-2); font-size: 15px; }
 
+  .closing { background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(91,140,245,.2), transparent 70%), var(--navy-deep); color: #fff; text-align: center; padding: clamp(80px, 11vw, 150px) 0; }
+  .closing h2 { margin: 0 auto; max-width: 16ch; font-size: clamp(36px, 6vw, 76px); }
+  .closing p { color: #b4bfd6; margin: 24px auto 0; max-width: 520px; font-size: 18px; }
+  .closing .cta-row { justify-content: center; }
 
-    /* PAIN / SOLUTION */
-    .split {
-      display: grid; grid-template-columns: 1fr 1px 1fr;
-      max-width: 1060px; margin: 0 auto; padding: 72px 48px; gap: 40px;
-    }
-    @media (max-width: 680px) { .split { grid-template-columns: 1fr; padding: 48px 24px; } }
-    .split-col { display: flex; flex-direction: column; gap: 16px; }
-    .split-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
-    .split-col.good .split-label { color: var(--navy); }
-    .split h2 { font-family: "Raleway", sans-serif; font-size: clamp(20px, 2.4vw, 28px); font-weight: 700; line-height: 1.2; color: var(--ink); text-wrap: balance; }
-    .split p { font-size: 15px; color: var(--muted); line-height: 1.75; }
-    .split-divider { background: var(--border); align-self: stretch; }
-    @media (max-width: 680px) { .split-divider { height: 1px; } }
+  footer { background: var(--navy-deep); color: #8493b0; border-top: 1px solid rgba(255,255,255,.08); padding: 36px 0; font-size: 14px; }
+  .foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .foot a { color: #b4bfd6; text-decoration: none; }
+  .foot a:hover { color: var(--blue-soft); }
+  .foot .brand { color: #fff; font-size: 16px; }
 
-    /* CONNECTIVITY VISUAL — full bleed image + feature list below */
-    .connectivity {
-      background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    }
-    .connectivity-img {
-      width: 100%; height: 320px; overflow: hidden;
-    }
-    .connectivity-img img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
-      -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 45%, transparent 100%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      -webkit-mask-composite: source-in;
-      mask-composite: intersect;
-    }
-    .connectivity-inner { max-width: 1060px; margin: 0 auto; padding: 56px 48px; }
-    .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 12px; }
-    .section-head h2 { font-family: "Raleway", sans-serif; font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; color: var(--navy); }
-    .section-head p { font-size: 14px; color: var(--muted); }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
-    .feature-list { display: flex; flex-direction: column; }
-    .feature-row {
-      display: grid; grid-template-columns: 200px 1fr;
-      gap: 16px 32px; align-items: start;
-      padding: 18px 0; border-bottom: 1px solid var(--border);
-    }
-    .feature-row:first-child { border-top: 1px solid var(--border); }
-    @media (max-width: 640px) {
-      .feature-row { grid-template-columns: 1fr; gap: 6px; }
-    }
-    .feature-name { font-size: 13.5px; font-weight: 600; color: var(--ink); padding-top: 2px; }
-    .feature-desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
-
-    /* PRIVACY SECTION — image left, text right */
-    .privacy {
-      display: grid; grid-template-columns: 1fr 1fr;
-      overflow: hidden; background: var(--bg);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    }
-    @media (max-width: 768px) { .privacy { grid-template-columns: 1fr; } }
-    .privacy-img { overflow: hidden; min-height: 360px; }
-    .privacy-img img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
-      -webkit-mask-image: linear-gradient(to right, black 55%, transparent 100%);
-      mask-image: linear-gradient(to right, black 55%, transparent 100%);
-    }
-    .privacy-text {
-      padding: 72px 56px; display: flex; flex-direction: column;
-      justify-content: center; gap: 20px;
-    }
-    .privacy-text .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--navy); }
-    .privacy-text h2 { font-family: "Raleway", sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--navy); line-height: 1.12; }
-    .privacy-text p { font-size: 15px; color: var(--muted); line-height: 1.75; }
-
-    /* CTA */
-    .cta-band { background: #1b2d48; padding: 88px 48px; text-align: center; }
-    .cta-band h2 { font-family: "Raleway", sans-serif; font-size: clamp(26px, 4vw, 44px); font-weight: 800; color: #fff; margin-bottom: 12px; letter-spacing: -.01em; }
-    .cta-band p { font-size: 16px; color: rgba(255,255,255,.6); margin-bottom: 36px; }
-    .cta-band .btn-primary { background: #fff; color: var(--navy); font-size: 15px; }
-    .cta-band .btn-primary:hover { background: var(--accent-bg); transform: translateY(-1px); }
-
-    /* FOOTER */
-    footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 28px 48px; border-top: 1px solid var(--border); background: var(--surface); }
-    footer p { font-size: 12.5px; color: var(--muted); }
-  </style>
+  @media (max-width: 960px) {
+    .nav-links a:not(.btn) { display: none; }
+    .hero-inner, .compare, .steps, .mgrid { grid-template-columns: 1fr; }
+    .app { grid-template-columns: 34% 1fr; }
+    .pgrid { grid-template-columns: 1fr 1fr; }
+    .cap { grid-template-columns: 1fr; gap: 12px; }
+    .who { flex-direction: column; gap: 6px; }
+    .who span { text-align: left; }
+  }
+  @media (max-width: 560px) { .pgrid { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
-<nav>
-  <span class="logo">{ C } Contexto</span>
-  <a href="mailto:info@contexto-ai.com" class="nav-cta">Get Started</a>
-</nav>
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">{ C } Contexto</a>
+    <nav class="nav-links">
+      <a href="#how">Why Contexto</a>
+      <a href="#memory">Shared memory</a>
+      <a href="#what">What it does</a>
+      <a href="#private">Security</a>
+      <a href="#start">Getting started</a>
+      <a href="mailto:info@contexto-ai.com" class="btn btn-dark btn-sm">Request access</a>
+    </nav>
+  </div>
+</header>
 
-<div class="banner">
-  <img src="./banner.jpg" alt="AI intelligence">
-</div>
-
-<section class="hero">
-  <div class="hero-text">
-    <div class="hero-eyebrow">Private AI for Your Business</div>
-    <h1>AI that knows your work,<br><em>not just your question.</em></h1>
-    <p class="hero-sub">
-      Contexto is a managed AI agent that learns your business and works from your actual data.
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:info@contexto-ai.com" class="btn-primary">Request Access</a>
-      <a href="#how" class="btn-ghost">See How It Works</a>
+<main>
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg"><source src="hero-loop.mp4" type="video/mp4"></video>
     </div>
-  </div>
-  <div class="hero-img">
-    <img src="./hero-ui.png" alt="Contexto agent UI">
-  </div>
-</section>
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow"><i></i>Private AI with shared memory</div>
+        <h1>AI that knows your work, <em>not just your question.</em></h1>
+        <p class="lead">Contexto is a managed AI agent that works from your own documents, email and client history, and remembers across your whole team and every project. We set it up and run it. It stays private to your firm.</p>
+        <div class="cta-row">
+          <a class="btn btn-dark" href="mailto:info@contexto-ai.com">Request access</a>
+          <a class="btn btn-ghost" href="#what">See what it does</a>
+        </div>
+      </div>
 
-<div class="split" id="how">
-  <div class="split-col">
-    <span class="split-label">The problem</span>
-    <h2>Generic AI starts from zero every time</h2>
-    <p>Every session is blank. It doesn't know who you are, who your clients are, or what happened last week. You spend more time explaining than working, and the output is generic.</p>
-  </div>
-  <div class="split-divider"></div>
-  <div class="split-col good">
-    <span class="split-label">What Contexto does</span>
-    <h2>Connected to your work from day one</h2>
-    <p>Contexto knows your clients, your documents, and your history. Ask anything about your business and get an answer like you'd get from a senior colleague who was there for all of it.</p>
-  </div>
-</div>
-
-<div class="connectivity">
-  <div class="connectivity-img">
-    <img src="./connectivity.jpg" alt="AI connecting to your documents and data">
-  </div>
-  <div class="connectivity-inner">
-    <div class="section-head">
-      <h2>What it does</h2>
-      <p>Built-in skills, ready from day one</p>
-    </div>
-    <div class="feature-list">
-      <div class="feature-row">
-        <span class="feature-name">Document reader</span>
-        <span class="feature-desc">Reads and writes Word, Excel, PDF and PowerPoint. Ask questions about any file directly.</span>
-      </div>
-      <div class="feature-row">
-        <span class="feature-name">Email assistant</span>
-        <span class="feature-desc">Reads your Outlook inbox, summarizes threads, and drafts replies ready to send.</span>
-      </div>
-      <div class="feature-row">
-        <span class="feature-name">Client knowledge</span>
-        <span class="feature-desc">Remembers interactions and learns the fabric of your client community.</span>
-      </div>
-      <div class="feature-row">
-        <span class="feature-name">Session log</span>
-        <span class="feature-desc">Keeps a daily record of what was discussed and decided, so nothing is lost between sessions.</span>
-      </div>
-      <div class="feature-row">
-        <span class="feature-name">Browser reader</span>
-        <span class="feature-desc">It sees what you see.</span>
+      <div class="chat app reveal" aria-label="The Contexto app, answering from shared project memory">
+        <aside class="side">
+          <div class="ball">C</div>
+          <div class="side-name">Contexto</div>
+          <div class="side-sub">Private AI</div>
+          <div class="stat"><i></i>Session encrypted</div>
+          <div class="side-h">Context</div>
+          <div class="pills"><span>memory.md</span><span>company.md</span><span>projects.md</span></div>
+          <div class="nav-i">Private Browser</div>
+          <div class="nav-i">Templates</div>
+          <div class="nav-i">Saved sessions</div>
+          <div class="nav-i">Watched folders</div>
+          <div class="nav-i hot">Team memory</div>
+        </aside>
+        <div class="main">
+          <div class="chat-body">
+            <div class="bubble u">Where are we on the Haifa clinic project?</div>
+            <div class="bubble a">From the shared project notes:
+              <ul>
+                <li><b>Contract:</b> signed on 12 Nov, waiting on the revised floor plan.</li>
+                <li><b>Budget:</b> updated by Dana on Tuesday.</li>
+                <li><b>Open:</b> insurance certificate is due Friday.</li>
+              </ul>
+              <div class="src">Source: Haifa clinic, shared with your team</div>
+            </div>
+          </div>
+          <div class="chat-input">Type a message or drop a file...</div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="privacy">
-  <div class="privacy-img">
-    <img src="./privacy.jpg" alt="Secure and private">
-  </div>
-  <div class="privacy-text">
-    <span class="label">Security</span>
-    <h2>Private by design.</h2>
-    <p>Everything runs inside your own environment. Your data never leaves your network, is never used for training, and is never shared with third parties.</p>
-    <p>Contexto is a managed service — we handle setup, maintenance, and support. You get enterprise-grade private AI without an IT team to run it.</p>
-  </div>
-</div>
+  <section class="compare-wrap" id="how">
+    <div class="wrap">
+      <div class="sec-label reveal">Why Contexto</div>
+      <h2 class="reveal">Generic AI starts from zero. <em>Contexto starts from your work.</em></h2>
+      <div class="compare">
+        <div class="col reveal">
+          <div class="tag">Generic AI</div>
+          <h3>A blank page every time</h3>
+          <p>It does not know who you are, who your clients are, or what happened last week. You spend more time explaining than working, and the output is generic.</p>
+        </div>
+        <div class="col us reveal">
+          <div class="tag">Contexto</div>
+          <h3>Connected to your work from day one</h3>
+          <p>It knows your clients, your documents and your history. Ask anything about your business and get an answer like you would from a senior colleague who was there for all of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="cta-band">
-  <h2>Ready to get started?</h2>
-  <p>We work with a small number of clients. Reach out and we'll be in touch.</p>
-  <a href="mailto:info@contexto-ai.com" class="btn-primary">info@contexto-ai.com</a>
-</section>
+  <section id="memory">
+    <div class="wrap">
+      <div class="sec-label reveal">Shared memory</div>
+      <h2 class="reveal">One memory for the team. <em>Across every project.</em></h2>
+      <p class="sec-intro reveal">What one colleague teaches Contexto, everyone's Contexto knows. Your firm's background and the status of each project live in one shared place, so nobody starts from a blank page or repeats the same briefing.</p>
+      <div class="mgrid">
+        <div class="mcard reveal">
+          <span>01</span>
+          <h3>Firm notes</h3>
+          <p>Who you are, how you work, your clients and your standards. Written once, available to every user in your organization.</p>
+        </div>
+        <div class="mcard reveal">
+          <span>02</span>
+          <h3>Project status</h3>
+          <p>Link a project folder once and Contexto keeps a shared status for it. Anyone's update is visible to everyone, and two people editing at the same time never overwrite each other.</p>
+        </div>
+        <div class="mcard reveal">
+          <span>03</span>
+          <h3>You approve what it remembers</h3>
+          <p>Contexto reads recent sessions and suggests what is worth remembering. Nothing is saved until you share, edit or dismiss each suggestion, and you can delete any entry later.</p>
+        </div>
+      </div>
+      <div class="mnote reveal"><b>Private to your firm</b>Shared notes are encrypted with a key that belongs to your organization alone. Other customers can never read them, and they are treated as information, never as instructions.</div>
+    </div>
+  </section>
+
+  <section id="what">
+    <div class="wrap">
+      <div class="sec-label reveal">What it does</div>
+      <h2 class="reveal">Built-in skills, <em>ready from day one.</em></h2>
+      <div class="cap-list">
+        <div class="cap reveal">
+          <div class="n">01</div>
+          <h3>Reads your documents</h3>
+          <div>
+            <p>Ask questions about any file directly. Contexto reads Word, Excel, PDF and PowerPoint, including scanned pages, in Hebrew and English, and works through long files page by page.</p>
+            <ul><li>Word</li><li>Excel</li><li>PDF and scans</li><li>PowerPoint</li></ul>
+          </div>
+        </div>
+        <div class="cap reveal">
+          <div class="n">02</div>
+          <h3>Drafts in your style</h3>
+          <div>
+            <p>Writes Word documents on your own templates and keeps their fonts and styles, with correct right-to-left layout for Hebrew. It previews the result in Word to check it before you see it. Emails are drafts for you to review. Contexto never sends on its own.</p>
+            <ul><li>Your templates</li><li>Hebrew right to left</li><li>Word preview</li><li>You approve every send</li></ul>
+          </div>
+        </div>
+        <div class="cap reveal">
+          <div class="n">03</div>
+          <h3>Meeting notes</h3>
+          <div>
+            <p>Turns rough notes or transcripts into clear action items and decisions, ready to share.</p>
+            <ul><li>Action items</li><li>Decisions</li><li>Follow-ups</li></ul>
+          </div>
+        </div>
+        <div class="cap reveal">
+          <div class="n">04</div>
+          <h3>Keeps watch, keeps the thread</h3>
+          <div>
+            <p>Watches the folders you choose and tells you when something new arrives. Reopen any session from the last week and carry on exactly where you stopped.</p>
+            <ul><li>Watched folders</li><li>Tray alerts</li><li>Resume sessions</li></ul>
+          </div>
+        </div>
+        <div class="cap reveal">
+          <div class="n">05</div>
+          <h3>Honest about what it sees</h3>
+          <div>
+            <p>When a quote comes from a scan, Contexto says it is a reading, not a verified copy. Ask whether a document is genuine and it checks for signs of editing, signatures and QR codes, then tells you clearly what it could not prove.</p>
+            <ul><li>Scan readings</li><li>Authenticity checks</li><li>Clear limits</li></ul>
+          </div>
+        </div>
+        <div class="cap reveal">
+          <div class="n">06</div>
+          <h3>Everyday extras</h3>
+          <div>
+            <p>Researches current information online, sees what you see in the browser, creates invoices from your template, and reads your mail, Gmail and WhatsApp Web to help you reply, with sending always left to you.</p>
+            <ul><li>Web research</li><li>Private browser</li><li>Invoices</li><li>Mail, Gmail, WhatsApp Web</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark" id="private">
+    <div class="wrap">
+      <div class="sec-label reveal">Security</div>
+      <h2 class="reveal">Private by design. <em>Managed for you.</em></h2>
+      <p class="sec-intro reveal">Your clients trust you with their information. Contexto is built so that trust does not have to be traded away to use AI.</p>
+      <div class="pgrid">
+        <div class="pcard reveal"><div class="dot"></div><h3>Your own account</h3><p>Every firm gets its own private account, separate from every other customer.</p></div>
+        <div class="pcard reveal"><div class="dot"></div><h3>Files stay with you</h3><p>Your files stay on your computer. Only what a request needs is sent, encrypted, to the AI.</p></div>
+        <div class="pcard reveal"><div class="dot"></div><h3>Never used for training</h3><p>Your data is never used to train models and never shared with third parties.</p></div>
+        <div class="pcard reveal"><div class="dot"></div><h3>You stay in control</h3><p>Contexto asks before it acts on your computer, and drafts never leave until you send them.</p></div>
+      </div>
+      <div class="note reveal"><b>Managed service</b>We handle setup, maintenance and support. You get private AI without an IT team to run it.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-label reveal">Built for</div>
+      <h2 class="reveal">Firms where <em>every client file matters.</em></h2>
+      <div class="who-list">
+        <div class="who reveal"><strong>Law firms</strong><span>Review contracts, compare versions and draft in your house style.</span></div>
+        <div class="who reveal"><strong>Clinics and practices</strong><span>Handle paperwork and summaries without patient data leaving your control.</span></div>
+        <div class="who reveal"><strong>Small professional firms</strong><span>Give a small team the reach of a much larger back office.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-wrap" id="start">
+    <div class="wrap">
+      <div class="sec-label reveal">Getting started</div>
+      <h2 class="reveal">We set it up. <em>You get to work.</em></h2>
+      <div class="steps">
+        <div class="step reveal"><span>01</span><h3>We install it</h3><p>A simple installer on your Windows computer, with your private account already configured.</p></div>
+        <div class="step reveal"><span>02</span><h3>We connect your work</h3><p>Point Contexto at your folders and mail, and add your templates and firm context.</p></div>
+        <div class="step reveal"><span>03</span><h3>You ask, it works</h3><p>Ask about a document, draft a reply, summarize a meeting. We stay on hand for support.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Ready to get started?</h2>
+      <p>We work with a small number of clients. Reach out and we will be in touch.</p>
+      <div class="cta-row"><a class="btn btn-light" href="mailto:info@contexto-ai.com">info@contexto-ai.com</a></div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <span class="logo">{ C } Contexto</span>
-  <p>contexto-ai.com</p>
-  <p>© 2026 Contexto</p>
+  <div class="wrap foot">
+    <span class="brand">{ C } Contexto</span>
+    <a href="https://contexto-ai.com">contexto-ai.com</a>
+    <span>© 2026 Contexto</span>
+  </div>
 </footer>
 
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
